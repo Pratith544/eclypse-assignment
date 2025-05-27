@@ -79,7 +79,7 @@ const [selectedSize, setSelectedSize] = useState<string | null>(null);
 </header>
 
         {/* Brand Name Section */}
-        <div className="relative w-[385px] h-[129px] mt-[80px] ml-11">
+        <div className="relative w-[385px] h-[129px] mt-[200px] ml-11">
           <div className="absolute top-0 left-0 [font-family:'Neue_Montreal-Regular',Helvetica] font-normal text-white text-[107.1px] tracking-[-1.07px] leading-[normal]">
             Eclypse
           </div>
