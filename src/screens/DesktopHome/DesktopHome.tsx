@@ -9,11 +9,14 @@ import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Separator } from "../../components/ui/separator";
 import { HoverImageCard } from "../../components/hover-image-card";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export const DesktopHome = (): JSX.Element => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 const [selectedSize, setSelectedSize] = useState<string | null>(null);
+const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,18 +64,30 @@ const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
       {/* Navigation */}
       <nav className="flex items-center gap-16">
-        <div className="[font-family:'Helvetica_Neue-Regular',Helvetica] font-normal text-white text-[19.3px] tracking-[-0.39px]">
-          About Us
-        </div>
+        <Link to="/aboutus">
+  <div className="cursor-pointer [font-family:'Helvetica_Neue-Regular',Helvetica] font-normal text-white text-[19.3px] tracking-[-0.39px]">
+    About Us
+  </div>
+</Link>
+
         <div className="[font-family:'Helvetica_Neue-Regular',Helvetica] font-normal text-white text-[19.3px] tracking-[-0.39px]">
           Waitlist
         </div>
-        <div className="[font-family:'Helvetica_Neue-Regular',Helvetica] font-normal text-white text-[19.3px] tracking-[-0.39px]">
-          Cart
-        </div>
-        <Button className="bg-white hover:bg-red-500 transition-colors duration-300 text-black hover:text-white rounded-[8.71px] px-[38.69px] py-[14.51px] [font-family:'Helvetica_Neue-Medium',Helvetica] text-[19.3px] tracking-[-0.39px] h-auto">
-          Buy
-        </Button>
+       <div
+  onClick={() => navigate("/checkout")}
+  className="cursor-pointer [font-family:'Helvetica_Neue-Regular',Helvetica] font-normal text-white text-[19.3px] tracking-[-0.39px]"
+>
+  Cart
+</div>
+
+
+       <Button
+  onClick={() => navigate("/checkout")}
+  className="bg-white hover:bg-red-500 transition-colors duration-300 text-black hover:text-white rounded-[8.71px] px-[38.69px] py-[14.51px] [font-family:'Helvetica_Neue-Medium',Helvetica] text-[19.3px] tracking-[-0.39px] h-auto"
+>
+  Buy
+</Button>
+
       </nav>
     </div>
   </div>
@@ -200,14 +215,14 @@ const [selectedSize, setSelectedSize] = useState<string | null>(null);
               <Separator className="mt-[49px] bg-black/20" />
 
               {/* Price */}
-              <div className="mt-[54px]">
-                <div className="[font-family:'Helvetica_Neue-Medium',Helvetica] font-medium text-[#111111] text-4xl tracking-[-0.72px]">
-                  ₹ 7,999
-                </div>
-                <div className="[font-family:'Helvetica_Neue-Regular',Helvetica] font-normal text-[#767676] text-[15px] tracking-[-0.30px] mt-[2px] ml-[128px]">
-                  MRP incl. of all taxes
-                </div>
-              </div>
+             <div className="mt-[54px] flex items-baseline gap-4">
+  <div className="[font-family:'Helvetica_Neue-Medium',Helvetica] font-medium text-[#111111] text-4xl tracking-[-0.72px]">
+    ₹ 7,999
+  </div>
+  <div className="[font-family:'Helvetica_Neue-Regular',Helvetica] font-normal text-[#767676] text-[15px] tracking-[-0.30px]">
+    MRP incl. of all taxes
+  </div>
+</div>
 
               {/* Size Selection */}
               <div className="mt-[82px] flex items-center">
@@ -246,15 +261,21 @@ const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
               {/* Action Buttons */}
               <div className="flex gap-8 mt-[86px]">
-                <Button
-                  variant="outline"
-                  className="flex-1 h-[66px] rounded-[8.71px] border-2 border-solid border-[#c2c2c2] bg-white [font-family:'Helvetica_Neue-Medium',Helvetica] font-medium text-[#0d0d0d] text-[19.3px] tracking-[-0.39px] hover:bg-white hover:text-[#0d0d0d] hover:border-black transition-colors duration-300"
-                >
-                  Add to Cart
-                </Button>
-                <Button className="flex-1 h-[66px] rounded-[8.71px] bg-black hover:bg-red-500 transition-colors duration-300 [font-family:'Helvetica_Neue-Medium',Helvetica] font-medium text-white text-[19.3px] tracking-[-0.39px]">
-                  Buy
-                </Button>
+               <Button
+    onClick={() => navigate("/checkout")}
+    variant="outline"
+    className="w-1/3 h-[66px] rounded-[8.71px] border-2 border-solid border-[#c2c2c2] bg-white [font-family:'Helvetica_Neue-Medium',Helvetica] font-medium text-[#0d0d0d] text-[19.3px] tracking-[-0.39px] hover:bg-white hover:text-[#0d0d0d] hover:border-black transition-colors duration-300"
+  >
+    Add to Cart
+  </Button>
+
+  {/* Buy Button */}
+  <Button
+    onClick={() => navigate("/checkout")}
+    className="w-2/3 h-[66px] rounded-[8.71px] bg-black hover:bg-red-500 transition-colors duration-300 [font-family:'Helvetica_Neue-Medium',Helvetica] font-medium text-white text-[19.3px] tracking-[-0.39px]"
+  >
+    Buy
+  </Button>
               </div>
             </div>
           </CardContent>
