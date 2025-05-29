@@ -159,18 +159,25 @@ const navigate = useNavigate();
         {/* Image Gallery */}
         <div className="mt-[119px] mx-[50px] grid grid-cols-3 gap-[35px]">
           <div className="w-full h-[489px] rounded-[5px] bg-[url(..//frame-3.png)] bg-cover bg-center col-span-2" />
-          <div className="w-full h-[489px] rounded-[5px] bg-[url(..//frame-18-2.png)] bg-cover bg-center" />
+          <div className="group relative w-full h-[489px] rounded-[5px] overflow-hidden cursor-pointer">
+            <div
+              className="w-full h-full rounded-[5px] bg-[url(..//frame-18-2.png)] bg-cover bg-center transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl"
+            />
+            <div className="absolute bottom-0 left-0 w-full p-4 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[15px] font-medium z-10">
+              Premium wool blend in signature vermilion
+            </div>
+          </div>
         </div>
 
         {/* Second Image Gallery */}
        <div className="mt-[28px] mx-[50px] grid grid-cols-3 gap-[35px]">
   <HoverImageCard
     imageSrc="/frame-18.png"
-    text="Tailored for timelessness"
+    text="Discreet side pockets with clean finish"
   />
   <HoverImageCard
     imageSrc="/frame-18-1.png"
-    text="Designed with precision"
+    text="Hand-cut and assembled in small batches"
   />
   <HoverImageCard
     imageSrc="/frame-8.png"

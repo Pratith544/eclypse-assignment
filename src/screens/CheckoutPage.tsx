@@ -115,6 +115,7 @@ const CheckoutPage: React.FC = () => {
                 </p>
               </div>
               <div className="mb-8">
+                <div className="border-t border-gray-300 mb-6"></div>
                 <h3 className="font-medium text-[15px] mb-6">Order Summary</h3>
                 <div className="space-y-3">
                   <div className="flex justify-between text-sm">
