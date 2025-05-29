@@ -1,16 +1,16 @@
-import React from 'react';
-import { MoonIcon, ArrowLeft } from 'lucide-react';
-import { useNavigate } from "react-router-dom"; 
+import React from "react";
+import { MoonIcon, ArrowLeft } from "lucide-react";
+import { Button } from "../components/ui/button";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-
 const CheckoutPage: React.FC = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
-    <div className="w-[1440px] h-[1024px] bg-white mx-auto flex flex-col relative shadow-lg border border-[#E5E7EB] overflow-hidden">
+    <div className="w-screen h-screen bg-white mx-auto flex flex-col relative shadow-lg border border-[#E5E7EB] overflow-hidden">
       {/* Header */}
-      <div className="px-8 py-6 flex justify-start items-center ">
+      <div className="px-12 py-6 flex justify-start items-center ">
         <div
           className="w-10 h-10 bg-[url(/frame-8.png)] bg-cover bg-center cursor-pointer hover:scale-110 transition-transform"
           onClick={() => navigate("/")}
@@ -22,8 +22,18 @@ const CheckoutPage: React.FC = () => {
           >
             About Us
           </Link>
-          <a href="#" className="text-gray-500 text-sm hover:font-medium hover:text-gray-900  transition-all">Waitlist</a>
-          <a href="#" className="text-gray-900 text-sm border-b border-black pb-0.5 hover:font-medium transition-all">Cart</a>
+          <a
+            href="#"
+            className="text-gray-500 text-sm hover:font-medium hover:text-gray-900  transition-all"
+          >
+            Waitlist
+          </a>
+          <a
+            href="#"
+            className="text-gray-900 text-sm border-b border-black pb-0.5 hover:font-medium transition-all"
+          >
+            Cart
+          </a>
         </div>
       </div>
       {/* Main Content */}
@@ -36,7 +46,9 @@ const CheckoutPage: React.FC = () => {
             className="flex items-center gap-1 mb-4 cursor-pointer pl-2"
           >
             <ArrowLeft className="h-5 w-5" />
-            <span className="font-medium text-[20px] bg-[#fbfafb] bg-opacity-20 px-2 rounded-sm leading-tight" >Shipping Address</span>
+            <span className="font-medium text-[20px] bg-[#fbfafb] bg-opacity-20 px-2 rounded-sm leading-tight">
+              Shipping Address
+            </span>
           </div>
           {/* Address Form */}
           <div className="border border-gray-200 rounded-lg p-8 h-[500px] flex flex-col">
@@ -49,14 +61,18 @@ const CheckoutPage: React.FC = () => {
             <div className="flex flex-col gap-6 flex-1">
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[13px] mb-2 text-gray-600">First Name</label>
+                  <label className="block text-[13px] mb-2 text-gray-600">
+                    First Name
+                  </label>
                   <input
                     type="text"
                     className="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
                   />
                 </div>
                 <div>
-                  <label className="block text-[13px] mb-2 text-gray-600">Last Name</label>
+                  <label className="block text-[13px] mb-2 text-gray-600">
+                    Last Name
+                  </label>
                   <input
                     type="text"
                     className="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
@@ -64,7 +80,9 @@ const CheckoutPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <label className="block text-[13px] mb-2 text-gray-600">Street Address</label>
+                <label className="block text-[13px] mb-2 text-gray-600">
+                  Street Address
+                </label>
                 <input
                   type="text"
                   className="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
@@ -72,21 +90,27 @@ const CheckoutPage: React.FC = () => {
               </div>
               <div className="grid grid-cols-3 gap-6">
                 <div>
-                  <label className="block text-[13px] mb-2 text-gray-600">Apt Number</label>
+                  <label className="block text-[13px] mb-2 text-gray-600">
+                    Apt Number
+                  </label>
                   <input
                     type="text"
                     className="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
                   />
                 </div>
                 <div>
-                  <label className="block text-[13px] mb-2 text-gray-600">State</label>
+                  <label className="block text-[13px] mb-2 text-gray-600">
+                    State
+                  </label>
                   <input
                     type="text"
                     className="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
                   />
                 </div>
                 <div>
-                  <label className="block text-[13px] mb-2 text-gray-600">Zip</label>
+                  <label className="block text-[13px] mb-2 text-gray-600">
+                    Zip
+                  </label>
                   <input
                     type="text"
                     className="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
@@ -95,23 +119,39 @@ const CheckoutPage: React.FC = () => {
               </div>
             </div>
             <div className="flex gap-4 mt-8">
-              <button className="border border-gray-300 rounded-lg py-2.5 px-6 text-sm hover:bg-gray-50 transition-colors w-[120px]">cancel</button>
-              <button className="bg-black text-white rounded-lg py-2.5 px-6 flex-1 text-sm hover:bg-gray-900 transition-colors">Save This Address</button>
+              <button className="border border-gray-300 rounded-lg py-2.5 px-6 text-sm hover:bg-red-500 transition-colors duration-300 w-[120px]">
+                cancel
+              </button>
+              <button className="bg-black text-white rounded-lg py-2.5 px-6 flex-1 text-sm hover:bg-red-500 transition-colors duration-300">
+                Save This Address
+              </button>
             </div>
           </div>
         </div>
         {/* Right Column - Order Summary */}
         <div className="flex flex-col gap-0 w-[450px] min-h-[600px] mt-[70px]">
           {/* Shipping Address Card (Right) */}
-          
+
           {/* Order Summary Card (Right) */}
           <div className="bg-gray-100 p-[32px] w-[450px] min-h-[505px] rounded-[10px] shadow-md flex flex-col justify-between">
             <div>
               <div className="mb-8 text-sm text-gray-600">
                 <p>
                   By placing your order, you agree to our company{" "}
-                  <a href="#" className=" text-black font-semibold hover:font-medium transition-all">Privacy policy</a> and{" "}
-                  <a href="#" className=" text-black font-semibold hover:font-medium transition-all">Conditions of use</a>.
+                  <a
+                    href="#"
+                    className=" text-black font-semibold hover:font-medium transition-all"
+                  >
+                    Privacy policy
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href="#"
+                    className=" text-black font-semibold hover:font-medium transition-all"
+                  >
+                    Conditions of use
+                  </a>
+                  .
                 </p>
               </div>
               <div className="mb-8">
@@ -130,7 +170,7 @@ const CheckoutPage: React.FC = () => {
                     <span>Before tax:</span>
                     <span>6,599</span>
                   </div>
-                  <div className="flex justify-between pb-4 text-sm border-b border-gray-200">
+                  <div className="flex justify-between pb-8 text-sm border-b border-gray-200">
                     <span>Tax Collected:</span>
                     <span>1,400</span>
                   </div>
@@ -141,7 +181,9 @@ const CheckoutPage: React.FC = () => {
                 </div>
               </div>
             </div>
-            <button className="bg-black text-white rounded-lg py-3.5 w-full text-sm font-medium hover:bg-gray-900 transition-colors mt-4">Place Order</button>
+            <button className="bg-black hover:bg-red-500 transition-colors duration-300 text-white rounded-lg py-3.5 w-full text-sm font-medium mt-4">
+              Place Order
+            </button>
           </div>
         </div>
       </div>
