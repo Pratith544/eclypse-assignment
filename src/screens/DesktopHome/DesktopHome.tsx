@@ -156,15 +156,22 @@ const navigate = useNavigate();
           />
         </div>
 
-        {/* Image Gallery */}
+      {/* Image Gallery */}
         <div className="mt-[119px] mx-[50px] grid grid-cols-3 gap-[35px]">
+          {/* Large image (unchanged) */}
           <div className="w-full h-[489px] rounded-[5px] bg-[url(..//frame-3.png)] bg-cover bg-center col-span-2" />
+
+          {/* Hoverable image with overlay */}
           <div className="group relative w-full h-[489px] rounded-[5px] overflow-hidden cursor-pointer">
-            <div
-              className="w-full h-full rounded-[5px] bg-[url(..//frame-18-2.png)] bg-cover bg-center transition-transform duration-300 group-hover:scale-105 group-hover:shadow-2xl"
-            />
-            <div className="absolute bottom-0 left-0 w-full p-4 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[15px] font-medium z-10">
-              Premium wool blend in signature vermilion
+            {/* Image */}
+            <div className="w-full h-full rounded-[5px] bg-[url(..//frame-18-2.png)] bg-cover bg-center transition-transform group-hover:shadow-2xl" />
+
+            {/* Full-height dim overlay that fades in */}
+            <div className="absolute inset-0 bg-gray-900 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+              {/* Caption pinned to the bottom */}
+              <p className="absolute bottom-10 left-4 right-4 text-white text-4xl font-medium">
+                Premium wool blend in signature vermilion
+              </p>
             </div>
           </div>
         </div>
@@ -182,6 +189,7 @@ const navigate = useNavigate();
   <HoverImageCard
     imageSrc="/frame-8.png"
     text="Eclypse"
+    
   />
 </div>
 
